@@ -1,0 +1,217 @@
+:root {
+  --blue: #003087;
+  --light: #f2f2f2;
+  --gray: #5f6368;
+  --primary: #0070ba;
+  --font: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: white;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.navbar .logout {
+  font-weight: bold;
+}
+
+/* Logo */
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.balance-section {
+  margin-bottom: 1rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.secondary {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.card {
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/*
+.crypto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crypto-item {
+  background: #f9f9f9;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crypto-item i,
+.crypto-item img {
+  margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+}
+
+.crypto-item span {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.learn-more {
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+*/
+
+/* Footer */
+.footer {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a, .footer-policy a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #666;
+}
+
+/* Hamburger visibility and style */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Show hamburger and nav styles on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--blue);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 10;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+

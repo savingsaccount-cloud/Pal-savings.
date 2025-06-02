@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPal Dashboard</title>
+  <link rel="stylesheet" href="Paypal-savings-home-design.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script defer src="Paypal-savings-home-js.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+
+ <header class="navbar">
+  <div class="logo">
+    <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo">
+    <img src="Picsart_25-03-04_10-24-35-370.jpg" alt="Logo">
+  </div>
+
+  <!--
+  <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    -->
+  
+  
+  <nav id="nav-links" class="nav-links">
+    <a href="Paypal-savings-home.html">Home</a>
+    <a href="Paypal-savings-wallet.html">Wallet</a>
+    <a href="Paypal-savings-activity.html">Activity</a>
+    <a href="Paypal-savings-settings.html">Settings</a>
+    <a href="Index.html" class="logout"><button onclick="logout()" style="border: none;" style="background-color: #003087; text-decoration: none;" style="color: white; text-decoration: none;">Log out</button></a>
+  </nav>
+
+  <!-- Hamburger icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <section class="left-panel">
+      <div class="card rewards">
+        <h2>PayPal Rewards</h2>
+        <p class="points">0 points</p>
+        <p>$0.00 cash back value</p>
+        <a href="https://www.paypal.com/us/welcome/signup/#/login_info">Ways to earn</a>
+      </div>
+
+      <div class="card actions">
+        <div class="action-buttons">
+          <button><i class="fas fa-paper-plane"></i><span>Send / Request</span></button>
+          <button><i class="fas fa-coins"></i><span>Crypto</span></button>
+        </div>
+        <div class="link-card">
+          <p>Link your credit card</p>
+          <small>Keep your financial info secure when buying online.</small>
+        </div>
+      </div>
+
+      <div class="card activity">
+        <h3>Recent activity</h3>
+        <p>See when money comes in, and when it goes out.</p>
+        <a href="Paypal-savings-activity.html">Show all</a>
+      </div>
+
+      <div class="card deals">
+        <h3>Popular Cash Back deals</h3>
+        <div class="deal-cards">
+          <div class="deal"><p><strong>Instacart</strong><br/>30% cash back<br/><small>up to $100</small></p></div>
+          <div class="deal"><p><strong>Shaw’s</strong><br/>10% cash back</p></div>
+          <div class="deal"><p><strong>Viator</strong><br/>6% cash back<br/><small>up to $20</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="card">
+        <h3>Banks and cards</h3>
+        <p>Link your bank, debit or credit card now.</p>
+        <a href="https://www.paypal.com/us/welcome/signup/#/login_info">Link a Card or Bank</a>
+      </div>
+      <div class="card">
+        <h3>Your favorite charities</h3>
+        <p>Make giving to the causes you care about simple.</p>
+        <a href="https://www.paypal.com/us/welcome/signup/#/login_info">Add your first charity</a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-links">
+      <a href="https://www.paypal.com/cshelp/personal">Help</a>
+      <a href="https://www.paypal.com/us/smarthelp/contact-us">Contact Us</a>
+      <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Security</a>
+      <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Fees</a>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy;1999–2025 PayPal, Inc. All rights reserved.</small>
+      <div class="footer-policy">
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">Privacy</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/country-worldwide">Cookies</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/legalhub-full">Legal</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Policy Updates</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      // Protect page from unauthorized access
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "index.html"; // <-- Redirect to login
+    }
+    function logout() {
+      sessionStorage.clear(); // Clears login session
+      window.location.href = "index.hmtl"; // Redirect to login
+    }
+
+    // Prevent browser caching the page (optional but enhances control)
+    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+      window.location.reload();
+    }
+    
+
+  </script>
+</body>
+</html>

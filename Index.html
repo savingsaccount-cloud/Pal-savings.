@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Login</title>
+    <link rel="stylesheet" href="Paypal-savings-signin-design.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo">
+            <img src="Picsart_25-03-04_10-24-35-370.jpg">
+        </div>
+        <form class="login-form">
+            <input type="text" placeholder="Email or mobile number" required>
+            <input type="password" placeholder="Password" required>
+            <a href="https://www.paypal.com/us/welcome/signup/#/login_info" class="forgot-password">Forgot password?</a>
+            <button type="submit" class="login-btn" onclick="handleSignIn()">Log In</button>
+            <div class="divider"><span>or</span></div>
+            <button type="button" class="signup-btn"><a href="https://www.paypal.com/us/welcome/signup/#/login_info" style="color: #0070ba; text-decoration: none;">Sign Up</a></button>
+        </form>
+        <div class="language-selector">
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="US Flag"></span>
+            <select>
+                <option>English</option>
+                <option>Français</option>
+                <option>Español</option>
+                <option>中文</option>
+            </select>
+        </div>
+        <footer>
+            <a href="https://www.paypal.com/us/smarthelp/contact-us">Contact Us</a>
+            <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">Privacy</a>
+            <a href="https://www.paypal.com/us/webapps/mpp/ua/legalhub-full">Legal</a>
+            <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Policy Updates</a>
+            <a href="https://www.paypal.com/us/webapps/mpp/country-worldwide">Worldwide</a>
+        </footer>
+    </div>
+    <script src="Paypal-savings-signin-js.js">
+    function handleSignIn() {
+    // Simulate successful login
+        sessionStorage.setItem("isAuthenticated", "true");
+        window.location.href = "Paypal-savings-home.html";
+    }
+
+    // Optional: clear any existing session on sign-in page load
+        window.onload = function () {
+        sessionStorage.removeItem("isAuthenticated");
+    };
+
+
+    </script>
+</body>
+</html>

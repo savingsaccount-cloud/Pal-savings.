@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPal Savings Wallet Dashboard</title>
+  <link rel="stylesheet" href="Paypal-savings-wallet-design.css" />
+  <script defer src="Paypal-savings-wallet-js.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="logo">
+    <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo">
+    <img src="Picsart_25-03-04_10-24-35-370.jpg" alt="Logo">
+  </div>
+
+  <!--
+  <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    -->
+  
+  
+  <nav id="nav-links" class="nav-links">
+    <a href="Paypal-savings-home.html">Home</a>
+    <a href="Paypal-savings-wallet.html">Wallet</a>
+    <a href="Paypal-savings-activity.html">Activity</a>
+    <a href="Paypal-savings-settings.html">Settings</a>
+    <a href="Index.html" class="logout"><button onclick="logout()" style="border: none;" style="background-color: #003087; text-decoration: none;" style="color: white; text-decoration: none;">Log out</button></a>
+  </nav>
+
+  <!-- Hamburger icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+  </header>
+
+
+  <div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">Savings</button>
+    </div>
+
+    <!-- Balance -->
+    <section class="balance-section">
+      <h3>Available value</h3>
+      <p class="value">$0.00</p>
+      <div class="btn-group">
+        <button class="btn primary"><a href="Paypal-savings-settings.html" style="color: white; text-decoration: none;">Deposit</a></button>
+        <button class="btn primary"><a href="https://www.paypal.com/us/welcome/signup/#/login_info" style="color: white; text-decoration: none;">Get rewards</a></button>
+      </div>
+    </section>
+
+    <!-- Announcement Card -->
+     <!--
+    <div class="card announcement">
+      <p>Now you can transfer PYUSD on Solana</p>
+      <a href="#">Go to PayPal USD</a>
+    </div>
+    -->
+    
+    <!-- Crypto List -->
+     <!--
+    <section class="crypto-list">
+      <div class="crypto-item"><img src="https://cryptologos.cc/logos/pyusd-pyusd-logo.png" alt=""> PayPal USD <span>$1.00 / PYUSD</span></div>
+      <div class="crypto-item"><i class="fab fa-bitcoin"></i> Bitcoin <span>$103,230.80 / BTC</span></div>
+      <div class="crypto-item"><i class="fab fa-ethereum"></i> Ethereum <span>$2,471.58 / ETH</span></div>
+      <div class="crypto-item"><img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt=""> Solana <span>$165.32 / SOL</span></div>
+      <div class="crypto-item"><img src="https://cryptologos.cc/logos/chainlink-link-logo.png" alt=""> Chainlink <span>$15.27 / LINK</span></div>
+      <div class="crypto-item"><img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt=""> Litecoin <span>$96.46 / LTC</span></div>
+      <div class="crypto-item"><img src="https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png" alt=""> Bitcoin Cash <span>$390.08 / BCH</span></div>
+    </section>
+    -->
+
+    <!-- Claim Section -->
+    <div class="card claim-section">
+      <p><strong>Have a Celsius claim code?</strong><br>You can redeem it here.</p>
+      <button class="btn secondary"><a href="https://www.paypal.com/us/welcome/signup/#/login_info" style="color: #0070ba; text-decoration: none;">Redeem Claim Code</a></button>
+    </div>
+
+    <!-- Learn More Cards -->
+     <!--
+    <section class="learn-more">
+      <div class="info-card">📘 About PayPal USD<br><small>3 min read</small></div>
+      <div class="info-card">🛡️ Protect yourself from scams<br><small>3 min read</small></div>
+      <div class="info-card">📈 Getting started with crypto<br><small>3 min read</small></div>
+    </section>
+    -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://www.paypal.com/cshelp/personal">Help</a>
+      <a href="https://www.paypal.com/us/smarthelp/contact-us">Contact Us</a>
+      <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Security</a>
+      <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Fees</a>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy;1999–2025 PayPal, Inc. All rights reserved.</small>
+      <div class="footer-policy">
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">Privacy</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/country-worldwide">Cookies</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/legalhub-full">Legal</a> |
+        <a href="https://www.paypal.com/us/webapps/mpp/ua/upcoming-policies-full">Policy Updates</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script>
+      // Protect page from unauthorized access
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "index.html"; // <-- Redirect to login
+    }
+    function logout() {
+      sessionStorage.clear(); // Clears login session
+      window.location.href = "index.hmtl"; // Redirect to login
+    }
+  </script>
+  
+</body>
+</html>

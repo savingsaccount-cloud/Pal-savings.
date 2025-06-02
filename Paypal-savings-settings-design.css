@@ -1,0 +1,164 @@
+:root {
+  --blue: #003087;
+  --light: #f2f2f2;
+  --gray: #5f6368;
+  --primary: #0070ba;
+  --font: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: white;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.navbar .logout {
+  font-weight: bold;
+}
+
+/* Logo */
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.profile-container {
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--blue);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.avatar {
+  background: var(--light-blue);
+  color: white;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.avatar, h2, h4 {
+    color: aliceblue;
+    }
+
+.account-box, .account-options {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-box, p {
+    color: #000;
+    }
+
+.account-options label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+}
+
+select, p {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a, .footer-policy a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #666;
+}
+
+/* Hamburger visibility and style */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Show hamburger and nav styles on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--blue);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 10;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  }
